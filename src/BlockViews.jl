@@ -1,5 +1,7 @@
 module BlockViews
 
-# Write your package code here.
+    include("BlockView.jl")
+
+    export BlockView, setelement!
 
 end
