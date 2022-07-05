@@ -27,6 +27,20 @@ function setelement!(A::AbstractMatrix, b::BlockView, (x, y)::Tuple{T, T}, (i, j
 end
 
 
+function setblock!(A::AbstractMatrix, b::BlockView, (x, y)::Tuple{T, T}, val) where T<:Int
+
+    checkvalidityofindex(b, x, y, 1, 1)
+
+    @views startx = x == 1 ? 0 : sum(b.Nx[1:x-1])
+    @views starty = y == 1 ? 0 : sum(b.Ny[1:y-1])
+
+    A[startx+1:startx+b.Nx[x], starty+1:starty+b.Ny[y]] = val
+
+    nothing
+
+end
+
+
 function getelement(A::AbstractMatrix, b::BlockView, (x, y)::Tuple{T, T}, (i, j)::Tuple{T, T}, val::Real) where T <: Int
 
     checkvalidityofindex(b, x, y, i, j)

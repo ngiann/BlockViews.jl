@@ -1,7 +1,7 @@
 name = "BlockViews"
 uuid = "6bab4857-2696-441f-b4fb-2621020a90f4"
 authors = ["ngiann <ngiann@gmail.com> and contributors"]
-version = "0.1.0"
+version = "0.1.1"
 
 [compat]
 julia = "1"
