@@ -2,6 +2,6 @@ module BlockViews
 
     include("BlockView.jl")
 
-    export BlockView, setelement!
+    export BlockView, getelement, setelement!
 
 end
